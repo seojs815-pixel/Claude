@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공정경쟁규약 영업 실무 기준 | 한국산텐제약</title>
+<style>
+  :root{
+    --navy:#0A3D62; --blue:#1B6CA8; --blue-soft:#EAF2F9;
+    --ink:#17242E; --sub:#51616E; --line:#DCE4EB;
+    --paper:#F4F7FA; --card:#FFFFFF;
+    --ok:#1E7B4F; --ok-bg:#E9F5EE;
+    --no:#C0392B; --no-bg:#FBEDEC;
+    --warn:#9A6600; --warn-bg:#FBF3E0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Malgun Gothic","맑은 고딕",Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+  /* Header */
+  header{
+    background:linear-gradient(160deg,var(--navy),var(--blue));
+    color:#fff; padding:34px 0 30px;
+  }
+  header .wrap{display:flex; flex-direction:column; gap:6px;}
+  .eyebrow{font-size:12px; letter-spacing:2px; color:#B9D6EC; font-weight:700;}
+  header h1{margin:2px 0 0; font-size:27px; letter-spacing:-.5px;}
+  header p{margin:4px 0 0; color:#D6E6F2; font-size:13.5px;}
+  .meta{margin-top:14px; font-size:12px; color:#AECBE2; border-top:1px solid rgba(255,255,255,.18); padding-top:10px;}
+
+  /* Nav */
+  nav{position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; gap:6px; overflow-x:auto; padding:9px 20px;}
+  nav button{white-space:nowrap; font-size:12.5px; font-weight:600; color:var(--sub);
+    font-family:inherit; background:none; border:none; cursor:pointer;
+    padding:6px 11px; border-radius:20px;}
+  nav button:hover{background:var(--blue-soft); color:var(--navy);}
+  nav button:focus-visible{outline:2px solid var(--blue); outline-offset:1px;}
+
+  main{padding:26px 0 60px;}
+  section{margin-bottom:30px; scroll-margin-top:56px;}
+  .sec-head{display:flex; align-items:baseline; gap:10px; margin:0 0 12px;}
+  .sec-num{font-size:12px; font-weight:800; color:#fff; background:var(--navy);
+    width:24px; height:24px; border-radius:6px; display:inline-flex;
+    align-items:center; justify-content:center; flex:0 0 auto; transform:translateY(3px);}
+  .sec-head h2{margin:0; font-size:20px; letter-spacing:-.3px;}
+  .sec-head .art{font-size:12px; color:var(--sub); font-weight:600;}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:16px 18px; margin-bottom:12px;}
+  .card h3{margin:0 0 8px; font-size:15px; color:var(--navy);}
+  .card p{margin:0 0 8px; font-size:13.5px; color:var(--ink);}
+  .card p:last-child{margin-bottom:0;}
+
+  /* tag rows */
+  .rule{display:flex; gap:10px; padding:8px 0; border-top:1px dashed var(--line); font-size:13.5px;}
+  .rule:first-of-type{border-top:none;}
+  .badge{flex:0 0 auto; font-size:11px; font-weight:800; padding:2px 8px;
+    border-radius:5px; height:fit-content; letter-spacing:.3px;}
+  .b-ok{background:var(--ok-bg); color:var(--ok);}
+  .b-no{background:var(--no-bg); color:var(--no);}
+  .b-warn{background:var(--warn-bg); color:var(--warn);}
+  .b-step{background:var(--blue-soft); color:var(--blue);}
+  .rule b{color:var(--navy);}
+
+  /* tables */
+  table{width:100%; border-collapse:collapse; margin:6px 0 2px; font-size:12.8px;}
+  th,td{border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--blue-soft); color:var(--navy); font-weight:700; font-size:12px;}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  caption{caption-side:top; text-align:left; font-size:12px; color:var(--sub); padding-bottom:4px;}
+  .hl{background:#FFFBEA;}
+
+  .note{font-size:12px; color:var(--sub); margin-top:6px;}
+  .flag{border-left:3px solid var(--no); background:var(--no-bg); padding:10px 14px;
+    border-radius:0 8px 8px 0; font-size:13px; margin:12px 0;}
+  .flag b{color:var(--no);}
+  .tip{border-left:3px solid var(--blue); background:var(--blue-soft); padding:10px 14px;
+    border-radius:0 8px 8px 0; font-size:13px; margin:12px 0;}
+
+  .foot{font-size:11.5px; color:var(--sub); text-align:center; padding-top:14px; border-top:1px solid var(--line);}
+  @media(max-width:640px){
+    header h1{font-size:22px;} .sec-head h2{font-size:17px;}
+    table{font-size:11.6px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="eyebrow">한국산텐제약 · 공정경쟁규약 세부 운영기준 (SK 규정–027-05)</span>
+    <h1>영업(Commercial) 실무 기준 요약</h1>
+    <p>MR이 현장에서 자주 쓰는 항목 중심 — 한도·절차·금지선을 한눈에</p>
+    <div class="meta">근거: 개정 8 (2024.11.01) · 대외비 · 판단이 애매하면 <b style="color:#fff">반드시 Compliance 담당자 확인</b></div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <button data-go="core">핵심 금지선</button>
+  <button data-go="pms">제품설명회</button>
+  <button data-go="sample">견본품</button>
+  <button data-go="lecture">강연·자문</button>
+  <button data-go="congress">학술대회 지원</button>
+  <button data-go="ad">전시·광고</button>
+  <button data-go="survey">시장조사</button>
+  <button data-go="donation">기부</button>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- CORE -->
+  <section id="core">
+    <div class="sec-head"><span class="sec-num">0</span><h2>가장 먼저 지킬 핵심 금지선</h2><span class="art">제3조</span></div>
+    <div class="card">
+      <div class="rule"><span class="badge b-no">절대 금지</span><span><b>현금성 금품</b> — 상품권·공연관람권 등 현금에 상응하는 금품은 어떤 경우에도 제공 불가.</span></div>
+      <div class="rule"><span class="badge b-no">금지</span><span>의약품 <b>채택·처방·사용유도·거래유지</b> 목적의 금전·물품·편익·향응 제공.</span></div>
+      <div class="rule"><span class="badge b-no">우회도 금지</span><span>도매상·다른 유통경로를 통한 간접 제공도 직접 제공과 동일하게 제한.</span></div>
+      <div class="rule"><span class="badge b-warn">간주 규정</span><span>HCP의 <b>가족·친인척 등 특수관계인</b>에 대한 제공 = 해당 HCP에 대한 제공으로 봄.</span></div>
+      <div class="rule"><span class="badge b-ok">3대 원칙</span><span>모든 경제적 이익 제공은 <b>투명성·비대가성·적정성</b>에 기초.</span></div>
+    </div>
+    <div class="tip">규정에 명시되지 않았거나 의문이 있는 사안은 <b>추진 전</b> Compliance 담당자의 자문·승인을 득해야 합니다. (제2.2조) · "업계 관행"이라고 반드시 합법·부합인 것은 아닙니다. (제2.9조)</div>
+  </section>
+
+  <!-- 제품설명회 -->
+  <section id="pms">
+    <div class="sec-head"><span class="sec-num">1</span><h2>제품설명회 — 영업 핵심</h2><span class="art">제10조</span></div>
+
+    <div class="card">
+      <h3>단일기관 (개별 요양기관 방문)</h3>
+      <div class="rule"><span class="badge b-ok">식음료</span><span>1일 <b>10만원 이하</b> (서비스비·부가세 미포함), <b>1인당 월 4회 이내</b>.</span></div>
+      <div class="rule"><span class="badge b-ok">판촉물</span><span>자사 회사명 또는 제품명 기입된 <b>1만원 이하</b>.</span></div>
+      <div class="rule"><span class="badge b-warn">시점</span><span>식음료는 <b>행사 진행 중 또는 직후</b> 제공. (점심에 행사 → 저녁에 식음료 = 금지)</span></div>
+      <div class="rule"><span class="badge b-warn">장소</span><span>기관 <b>내부 진행 원칙</b>, 불가피 시 <b>10km 이내</b> 근접 장소.</span></div>
+      <div class="note">간단한 음료·다과(Refreshment) 제공도 위 방문 제품설명회 원칙을 준수해야 함.</div>
+    </div>
+
+    <div class="card">
+      <h3>다기관 (복수 요양기관 대상)</h3>
+      <div class="rule"><span class="badge b-ok">제공 가능</span><span>실제 비용의 <b>여비·숙박</b>, <b>5만원 이하 기념품</b>, <b>10만원 이하 식음료</b>(서비스비·부가세 미포함).</span></div>
+      <div class="rule"><span class="badge b-ok">강연료</span><span>의·약학적 전문성이 요구되고 참석 HCP <b>10인 이상</b>인 경우 지급 가능 → 금액은 <b>별표1</b>(아래 강연·자문).</span></div>
+    </div>
+
+    <div class="card">
+      <h3>숙박 제품설명회 (4가지 요건 모두 충족)</h3>
+      <div class="rule"><span class="badge b-warn">인원</span><span>참석 HCP <b>30인 이상</b>.</span></div>
+      <div class="rule"><span class="badge b-warn">프로그램</span><span>학술·교육 프로그램 <b>4시간 이상</b> (숙박예정자 20% 미만이면 2시간 이상도 가능).</span></div>
+      <div class="rule"><span class="badge b-warn">숙박비</span><span>1인 1박 <b>33만원 이내</b> (서비스비·부가세 포함).</span></div>
+      <div class="rule"><span class="badge b-warn">숙박 요건</span><span>행사장소와 복귀장소의 행정구역(시 단위)이 다르고 <b>이튿날 행사 참가</b> 시 가능. 그 외 불가피 숙박은 사전 Compliance 승인.</span></div>
+    </div>
+
+    <div class="flag"><b>장소 금지:</b> 온천장·골프·스키·카지노(내국인 출입 가능) 등 위락시설이 부대시설로 운영되는 곳에서는 개최 불가. (제10.1조 5))</div>
+
+    <div class="card">
+      <h3>절차 — 금액·숙박 여부로 갈림</h3>
+      <table>
+        <caption>1회당 총 경비 기준 (국내 제품설명회)</caption>
+        <tr><th>구분</th><th>사전</th><th>사후</th><th>회계 제출</th></tr>
+        <tr><td class="num">20만원 이하</td><td>없음</td><td>없음</td><td>영수증 세부내역</td></tr>
+        <tr class="hl"><td class="num">20만원 초과<br>~30만원 미만</td><td>사전기안 (개최 <b>4일 전</b>)</td><td>없음</td><td>사전기안서 + 영수증</td></tr>
+        <tr class="hl"><td class="num">30만원 초과</td><td>사전기안 (개최 <b>4일 전</b>)</td><td>결과보고서 (종료 후 <b>2일 이내</b>)</td><td>사전+사후기안서 + 영수증</td></tr>
+      </table>
+      <table>
+        <caption style="margin-top:6px;">KPBMA 신고·승인</caption>
+        <tr><th>구분</th><th>기한 / 방식</th></tr>
+        <tr><td>숙박 <b>미</b>예정</td><td>개최 <b>1주일 전</b> KPBMA 신고 (Compliance 확인 후)</td></tr>
+        <tr class="hl"><td>숙박 예정</td><td>개최 <b>60일 전</b> KPBMA <b>사전승인</b> 신청 → 종료 후 <b>1개월 이내</b> 비용결산 통보</td></tr>
+      </table>
+      <div class="note">다기관 제품설명회는 결재서에 해당 KPBMA 신고서를 첨부. Q&A·방명록(참석자 서명) 등 증빙 확보 필수.</div>
+    </div>
+  </section>
+
+  <!-- 견본품 -->
+  <section id="sample">
+    <div class="sec-head"><span class="sec-num">2</span><h2>견본품 (Sample)</h2><span class="art">제5조</span></div>
+    <div class="card">
+      <div class="rule"><span class="badge b-ok">수량</span><span>제형·형태 확인에 필요한 <b>최소 수량</b>만. 중대한 변화 없으면 동일 HCP에 <b>거듭 제공 불가</b>.</span></div>
+      <div class="rule"><span class="badge b-warn">표기</span><span>최소 포장단위 외부에 "견본품" 또는 "sample" 식별 표기 (위·변조/제거 방지).</span></div>
+      <div class="rule"><span class="badge b-no">금지</span><span>(재)판매·환자 처방·임상시험용 사용 불가. <b>"(재)판매/처방 금지"</b> 표시 또는 구두 명시.</span></div>
+      <div class="rule"><span class="badge b-step">절차</span><span>SCM 신청 → Compliance 합의 후 출하 → <b>인수증</b>(소속·서명·수량) 수령해 전자결재 첨부.</span></div>
+    </div>
+  </section>
+
+  <!-- 강연/자문 별표1 -->
+  <section id="lecture">
+    <div class="sec-head"><span class="sec-num">3</span><h2>강연 · 자문 (별표1 요율)</h2><span class="art">제13조 · 별표1</span></div>
+    <div class="tip">선정 목적이 <b>홍보·등재유지·관계 개시/강화</b>이면 불가. 학술담당자 승인 → Compliance 사전 합의 → 서면계약 → 강연 사본/청중(HCP 10인 이상) 서명·자문 회의록 등 증빙.</div>
+
+    <div class="card">
+      <h3>강연료 (원)</h3>
+      <table>
+        <tr><th>시간</th><th>국공립병원 소속<br>(예: 경찰병원)</th><th>국공립·사립의대 교수 /<br>청탁금지법 비대상(개원의)</th></tr>
+        <tr><td>20분 이상</td><td class="num">200,000</td><td class="num">300,000</td></tr>
+        <tr><td>30분 이상</td><td class="num">300,000</td><td class="num">400,000</td></tr>
+        <tr><td>40분 이상</td><td class="num">400,000</td><td class="num">500,000</td></tr>
+        <tr><td>1시간 초과</td><td class="num">600,000</td><td class="num">750,000</td></tr>
+        <tr><td>1시간 20분 초과</td><td class="num">—</td><td class="num">1,000,000</td></tr>
+        <tr class="hl"><td>한도</td><td class="num">1일 60만 / 1년 300만*</td><td class="num">1일 100만 / 1년 300만*</td></tr>
+      </table>
+      <div class="note">* 신제품·새 적응증 주제, 전문가 희소 등 정당한 필요 시 연간 500만원까지 인정 가능.</div>
+    </div>
+
+    <div class="card">
+      <h3>자문료 (원)</h3>
+      <table>
+        <tr><th>구분</th><th>국공립병원 소속</th><th>의대 교수 / 개원의</th></tr>
+        <tr><td>1회</td><td class="num">400,000</td><td class="num">500,000</td></tr>
+        <tr class="hl"><td>한도</td><td class="num">1일 100만 / 1년 300만**</td><td class="num">1일 100만 / 1년 300만**</td></tr>
+        <tr><td>다수 자문회의<br>(최소 1시간)</td><td class="num">40만 (최대 4명)</td><td class="num">50만 (최대 4명)</td></tr>
+        <tr><td>좌장비 (주도적 Q&A/좌장발표)</td><td class="num">최대 40만</td><td class="num">최대 50만</td></tr>
+      </table>
+      <div class="note">** 약물경제성평가·연구개발/임상 관련 자문 등 상한 이상 용역이 객관적으로 인정되면 연간 상한 미적용. 다수 자문 4명 초과(최대 6명)는 사전 Compliance 합의 필요.</div>
+    </div>
+
+    <div class="card">
+      <h3>숙박·교통·식비 — 강연·자문 수행에 불가피할 때만</h3>
+      <table>
+        <tr><th>항목</th><th>4급↑ / 정·부교수↑</th><th>5급↓ / 조교수↓</th></tr>
+        <tr><td>숙박</td><td class="num">33만 (서비스·부가세 포함)</td><td>서울 7만 / 광역시 6만 / 기타 5만<br><span class="note">제품설명회 일반참석 동일 참여 시 33만 가능</span></td></tr>
+        <tr><td>교통</td><td>택시비, 기차 일반실·특실</td><td>택시비, 기차 일반실만</td></tr>
+        <tr><td>식비</td><td colspan="2">5만원 (제품설명회 일반참석 동일 참여 시 10만원, 서비스·부가세 미포함)</td></tr>
+      </table>
+      <div class="note">청탁금지법 비대상(개원의)은 공통 상단 기준(숙박 33만 등) 적용.</div>
+    </div>
+  </section>
+
+  <!-- 학술대회 지원 -->
+  <section id="congress">
+    <div class="sec-head"><span class="sec-num">4</span><h2>학술대회 참가·개최 지원</h2><span class="art">제7조 · 제8조</span></div>
+    <div class="card">
+      <h3>참가 지원 (발표자·좌장·토론자 실비 · KPBMA 경유)</h3>
+      <table>
+        <tr><th>항목</th><th>한도</th></tr>
+        <tr><td>등록비</td><td>기본 등록비 (실비)</td></tr>
+        <tr><td>교통비</td><td>이코노미 항공 / KTX 일반석 / 우등고속버스 (실비). 해외 현지 교통 기간 내 15만 이내</td></tr>
+        <tr><td>식대</td><td>1일 3식, 1식 5만원 이내</td></tr>
+        <tr><td>숙박</td><td>국내 1박 20만 / 해외 1박 35만 이내 (개최 1일 전~종료일)</td></tr>
+      </table>
+      <div class="rule"><span class="badge b-no">금지</span><span>여행·관광·여가활동 등 향응·편익 일체 금지.</span></div>
+      <div class="rule"><span class="badge b-no">지정금지</span><span>특정 HCP 지원을 <b>제안·약속·요청</b>하거나, 주최자의 참가자 선정에 관여·영향력 행사 불가. 지원할 학술대회만 지정해 협회에 기탁.</span></div>
+    </div>
+    <div class="card">
+      <h3>개최·운영 지원</h3>
+      <div class="rule"><span class="badge b-ok">가능</span><span>협회·학회 등이 주관하는 국내 학술대회에 기부·식음료·기념품·부스임대·광고로 지원.</span></div>
+      <div class="rule"><span class="badge b-no">금지</span><span>동문회·동기회·향우회, 송년·신년회, 사적 모임, <b>개별 요양기관 주최 행사</b> 지원 불가.</span></div>
+      <div class="rule"><span class="badge b-warn">주의</span><span>학술대회 주제·진행방식·참가자 결정에 관여 불가 (제품설명회 성격의 Satellite/Luncheon Symposium 제외). 종료 후 1개월 내 KPBMA 통보.</span></div>
+    </div>
+  </section>
+
+  <!-- 전시광고 -->
+  <section id="ad">
+    <div class="sec-head"><span class="sec-num">5</span><h2>전시 · 광고</h2><span class="art">제9조</span></div>
+    <div class="card">
+      <h3>부스비 한도 (학술대회당)</h3>
+      <table>
+        <tr><th>주최</th><th>기준</th><th>성격·규모 따라 최대</th></tr>
+        <tr><td>학회 등</td><td class="num">1부스 200만</td><td class="num">300만</td></tr>
+        <tr><td>요양기관</td><td class="num">1부스 50만</td><td class="num">100만</td></tr>
+      </table>
+      <div class="note">1부스 원칙, 2부스 초과 불가.</div>
+    </div>
+    <div class="card">
+      <h3>광고비 한도 (부가세 미포함)</h3>
+      <table>
+        <caption>인쇄 광고매체</caption>
+        <tr><th>발행기관</th><th>표2</th><th>표3</th><th>표1·4</th><th>내지/전자문서</th></tr>
+        <tr><td>요양기관</td><td class="num">100만</td><td class="num">70만</td><td class="num">150만</td><td class="num">60만</td></tr>
+        <tr><td>학회</td><td class="num">150만</td><td class="num">100만</td><td class="num">200만</td><td class="num">70만</td></tr>
+      </table>
+      <div class="note">웹사이트 광고: 연 1,000만 한도 내 월 100만까지 (복수 웹사이트는 합산 기준).</div>
+      <div class="rule" style="margin-top:6px;"><span class="badge b-warn">단체성</span><span>광고비·부스비 지급 대상 학회 등은 <b>법인</b>이거나 <b>고유번호증 발급</b> 단체여야 함 (개인 이익 제공 해석 방지).</span></div>
+    </div>
+  </section>
+
+  <!-- 시장조사 -->
+  <section id="survey">
+    <div class="sec-head"><span class="sec-num">6</span><h2>시장조사</h2><span class="art">제14조</span></div>
+    <div class="card">
+      <div class="rule"><span class="badge b-ok">답례비</span><span>응답 <b>30분 이상</b> 소요 시에 한해 1인당 <b>10만원(부가세 포함)</b> 이내.</span></div>
+      <div class="rule"><span class="badge b-no">금지</span><span>임직원이 HCP에게 조사 실시·계획을 알리거나, 조사기관에 특정 HCP 조사를 요청 불가.</span></div>
+      <div class="rule"><span class="badge b-warn">독립성</span><span>조사기관은 회사명·참여 HCP를 상호 비공개, HCP 선정은 조사기관이 독립적으로 수행.</span></div>
+    </div>
+  </section>
+
+  <!-- 기부 -->
+  <section id="donation">
+    <div class="sec-head"><span class="sec-num">7</span><h2>기부</h2><span class="art">제6조</span></div>
+    <div class="card">
+      <div class="rule"><span class="badge b-step">절차</span><span>금품 기부는 <b>Compliance 위원회 승인</b> + KPBMA 신고. 의약품 기부는 행위 <b>30일 전</b> KPBMA 신고, 전달일로부터 30일 내 신고서 제출.</span></div>
+      <div class="rule"><span class="badge b-no">금지 사례</span><span>채택·처방 대가 약속, 처방 영향 고려한 요청 응대, 부동산·비품·시설 자금 충당, <b>반복·지속</b> 기부, 관련 대학/재단 발전 명목, <b>장학금 명목</b> 기부.</span></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    본 요약은 SK 규정–027-05(개정 8) 중 영업 관련 조항을 재구성한 참고자료입니다. 실제 집행 시 원문·별표 및 Compliance 담당자 판단이 우선합니다.
+  </div>
+
+</main>
+<script>
+document.querySelectorAll('nav button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var el = document.getElementById(btn.dataset.go);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>
